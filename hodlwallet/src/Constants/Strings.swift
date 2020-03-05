@@ -11,13 +11,13 @@ import Foundation
 enum S {
 
     enum Symbols {
-        static let bits = "ƀ"
-        static let sat = "SAT"
+        static let bits = "\u{01e5}"
+        static let sat = "GRO"
         static var btc: String {
             if  #available(iOS 10, *) {
-                return "₿"
+                return "\u{01e4}"
             } else {
-                return "Ƀ"
+                return "\u{01e4}"
             }
         }
         static let narrowSpace = "\u{2009}"
@@ -26,13 +26,13 @@ enum S {
         static func currencyButtonTitle(maxDigits: Int) -> String {
             switch maxDigits {
             case 0:
-                return "Satoshi (\(S.Symbols.sat))"
+                return "Gro (\(S.Symbols.sat))"
             case 2:
-                return "Bits\(S.Symbols.narrowSpace)(\(S.Symbols.bits))"
+                return "Groetls\(S.Symbols.narrowSpace)(\(S.Symbols.bits))"
             case 5:
                 return "\(S.Symbols.narrowSpace)(m\(S.Symbols.btc))"
             case 8:
-                return "BTC\(S.Symbols.narrowSpace)(\(S.Symbols.btc))"
+                return "GRS\(S.Symbols.narrowSpace)(\(S.Symbols.btc))"
             default:
                 return "\(S.Symbols.bits)"
             }
