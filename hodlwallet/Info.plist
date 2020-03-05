@@ -12,7 +12,7 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Bitcoin Payment Request</string>
+			<string>Groestlcoin Payment Request</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -24,7 +24,7 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Bitcoin Payment</string>
+			<string>Groestlcoin Payment</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -36,7 +36,7 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Bitcoin Payment ACK</string>
+			<string>Groestlcoin Payment ACK</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -151,7 +151,7 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Bitcoin Payment Request</string>
+			<string>Groestlcoin Payment Request</string>
 			<key>UTTypeIdentifier</key>
 			<string>bitcoin.paymentrequest</string>
 			<key>UTTypeTagSpecification</key>
@@ -166,7 +166,7 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Bitcoin Payment</string>
+			<string>Groestlcoin Payment</string>
 			<key>UTTypeIdentifier</key>
 			<string>bitcoin.payment</string>
 			<key>UTTypeTagSpecification</key>
@@ -181,7 +181,7 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Bitcoin Payment ACK</string>
+			<string>Groestlcoin Payment ACK</string>
 			<key>UTTypeIdentifier</key>
 			<string>bitcoin.paymentack</string>
 			<key>UTTypeTagSpecification</key>

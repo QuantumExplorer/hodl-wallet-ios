@@ -82,7 +82,7 @@ enum S {
         static let containsAddress = NSLocalizedString("Send.containsAddress", value: "The destination is your own address. You cannot send to yourself.", comment: "Warning when sending to self.")
         enum UsedAddress {
             static let title = NSLocalizedString("Send.UsedAddress.title", value: "Address Already Used", comment: "Adress already used alert title")
-            static let firstLine = NSLocalizedString("Send.UsedAddress.firstLine", value: "Bitcoin addresses are intended for single use only.", comment: "Adress already used alert message - first part")
+            static let firstLine = NSLocalizedString("Send.UsedAddress.firstLine", value: "Groestlcoin addresses are intended for single use only.", comment: "Adress already used alert message - first part")
             static let secondLine = NSLocalizedString("Send.UsedAddress.secondLIne", value: "Re-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn't directly control the address.", comment: "Adress already used alert message - second part")
         }
         static let identityNotCertified = NSLocalizedString("Send.identityNotCertified", value: "Payee identity isn't certified.", comment: "Payee identity not certified alert title.")
@@ -164,7 +164,7 @@ enum S {
         static let amountHeader = NSLocalizedString("TransactionDetails.amountHeader", value:"Amount", comment: "Amount section header")
         static let emptyMessage = NSLocalizedString("TransactionDetails.emptyMessage", value:"Your transactions will appear here.", comment: "Empty transaction list message.")
         static let more = NSLocalizedString("TransactionDetails.more", value:"More...", comment: "More button title")
-        static let txHashHeader = NSLocalizedString("TransactionDetails.txHashHeader", value:"Bitcoin Transaction ID", comment: "Transaction ID header")
+        static let txHashHeader = NSLocalizedString("TransactionDetails.txHashHeader", value:"Groestlcoin Transaction ID", comment: "Transaction ID header")
         static let sentAmountDescription = NSLocalizedString("TransactionDetails.sentAmountDescription", value: "Sent <b>-%1$@</b>", comment: "Sent $5.00")
         static let receivedAmountDescription = NSLocalizedString("TransactionDetails.receivedAmountDescription", value: "Received <b>%1$@</b>", comment: "Received $5.00")
         static let movedAmountDescription = NSLocalizedString("TransactionDetails.movedAmountDescription", value: "Transferred to self <b>%1$@</b>", comment: "Transferred to self $5.00")
@@ -312,7 +312,7 @@ enum S {
 
     enum DefaultCurrency {
         static let rateLabel = NSLocalizedString("DefaultCurrency.rateLabel", value:"Exchange Rate", comment: "Exchange rate label")
-        static let bitcoinLabel = NSLocalizedString("DefaultCurrency.bitcoinLabel", value: "Bitcoin Display Unit", comment: "Bitcoin denomination picker label")
+        static let bitcoinLabel = NSLocalizedString("DefaultCurrency.bitcoinLabel", value: "Groestlcoin Display Unit", comment: "Groestlcoin denomination picker label")
     }
 
     enum SyncingView {
@@ -386,7 +386,7 @@ enum S {
         static let support = NSLocalizedString("MenuButton.support", value:"Knowledge", comment: "Menu button title")
         static let settings = NSLocalizedString("MenuButton.settings", value:"Settings", comment: "Menu button title")
         static let lock = NSLocalizedString("MenuButton.lock", value:"Lock Wallet", comment: "Menu button title")
-        static let buy = NSLocalizedString("MenuButton.buy", value:"Buy Bitcoin", comment: "Buy bitcoin title")
+        static let buy = NSLocalizedString("MenuButton.buy", value:"Buy Groestlcoin", comment: "Buy bitcoin title")
     }
 
     enum MenuViewController {
@@ -454,8 +454,8 @@ enum S {
             static let requestExpired = NSLocalizedString("PaymentProtocol.Errors.requestExpired", value: "request expired", comment: "Request expired payment protocol error message")
             static let badPaymentRequest = NSLocalizedString("PaymentProtocol.Errors.badPaymentRequest", value: "Bad Payment Request", comment: "Bad Payment request alert title")
             static let smallOutputErrorTitle = NSLocalizedString("PaymentProtocol.Errors.smallOutputError", value: "Couldn't make payment", comment: "Payment too small alert title")
-            static let smallPayment = NSLocalizedString("PaymentProtocol.Errors.smallPayment", value: "Bitcoin payments can't be less than %1$@.", comment: "Amount too small error message")
-            static let smallTransaction = NSLocalizedString("PaymentProtocol.Errors.smallTransaction", value: "Bitcoin transaction outputs can't be less than %1$@.", comment: "Output too small error message.")
+            static let smallPayment = NSLocalizedString("PaymentProtocol.Errors.smallPayment", value: "Groestlcoin payments can't be less than %1$@.", comment: "Amount too small error message")
+            static let smallTransaction = NSLocalizedString("PaymentProtocol.Errors.smallTransaction", value: "Groestlcoin transaction outputs can't be less than %1$@.", comment: "Output too small error message.")
             static let corruptedDocument = NSLocalizedString("PaymentProtocol.Errors.corruptedDocument", value: "Unsupported or corrupted document", comment: "Error opening payment protocol file message")
         }
     }
@@ -596,7 +596,7 @@ enum S {
     enum NodeSelector {
         static let manualButton = NSLocalizedString("NodeSelector.manualButton", value: "Switch to Manual Mode", comment: "Switch to manual mode button label")
         static let automaticButton = NSLocalizedString("NodeSelector.automaticButton", value: "Switch to Automatic Mode", comment: "Switch to automatic mode button label")
-        static let title = NSLocalizedString("NodeSelector.title", value: "Bitcoin Nodes", comment: "Node Selector view title")
+        static let title = NSLocalizedString("NodeSelector.title", value: "Groestlcoin Nodes", comment: "Node Selector view title")
         static let nodeLabel = NSLocalizedString("NodeSelector.nodeLabel", value: "Current Primary Node", comment: "Node address label")
         static let statusLabel = NSLocalizedString("NodeSelector.statusLabel", value: "Node Connection Status", comment: "Node status label")
         static let connected = NSLocalizedString("NodeSelector.connected", value: "Connected", comment: "Node is connected label")
@@ -612,6 +612,6 @@ enum S {
     
     enum Segwit {
         static let title = NSLocalizedString("Segwit.title", value: "HODL GRS Wallet has Upgraded!", comment: "Segwit view title")
-        static let body = NSLocalizedString("Segwit.body", value: "HODL GRS has upgraded to the newest Bitcoin address standard. This gives you the added benefit of saving on transaction fees and being compatible with the latest standards of the Bitcoin Network. You don't have to do anything different and the only thing you'll notice is your addresses have changed and now begin with \"bc\".\n\nYour money is safe and still stored on your Backup Recovery Key.\n\nSince this change is still taking effect across the Bitcoin Network, some services may not be ready to send to this new address type. If you encounter this you can still access the old addresses that begin with \"1\" via: Settings/ Wallet/ Show Legacy Address", comment: "Segwit view body text")
+        static let body = NSLocalizedString("Segwit.body", value: "HODL GRS has upgraded to the newest Groestlcoin address standard. This gives you the added benefit of saving on transaction fees and being compatible with the latest standards of the Groestlcoin Network. You don't have to do anything different and the only thing you'll notice is your addresses have changed and now begin with \"bc\".\n\nYour money is safe and still stored on your Backup Recovery Key.\n\nSince this change is still taking effect across the Groestlcoin Network, some services may not be ready to send to this new address type. If you encounter this you can still access the old addresses that begin with \"1\" via: Settings/ Wallet/ Show Legacy Address", comment: "Segwit view body text")
     }
 }
