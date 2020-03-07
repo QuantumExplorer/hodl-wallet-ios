@@ -91,7 +91,7 @@ class AboutViewController : UIViewController {
             myself.presentURL(string: "https://www.reddit.com/r/Hodlwallet/")
         }
         privacy.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://hodlwallet.com/privacy-policy")
+            myself.presentURL(string: "https://github.com/Groestlcoin/hodl-wallet-ios/wiki/PrivacyPolicy")
         }
     }
 
