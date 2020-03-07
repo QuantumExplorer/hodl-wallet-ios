@@ -232,7 +232,7 @@ enum S {
         static let defaultWalletName = NSLocalizedString("AccountHeader.defaultWalletName", value:"My Wallet", comment: "Default wallet name")
         static let manageButtonName = NSLocalizedString("AccountHeader.manageButtonName", value:"MANAGE", comment: "Manage wallet button title")
         static let equals = NSLocalizedString("AccountHeader.equals", value:"=", comment: "Equals symbol")
-        static let btcLabel = NSLocalizedString("AccountHeader.btcLabel", value: "1 BTC", comment: "BTC ")
+        static let btcLabel = NSLocalizedString("AccountHeader.btcLabel", value: "1 GRS", comment: "GRS")
     }
 
     enum VerifyPin {
@@ -299,7 +299,7 @@ enum S {
         static let twitter = NSLocalizedString("About.twitter", value:"Twitter", comment: "About screen twitter label")
         static let reddit = NSLocalizedString("About.reddit", value:"Reddit", comment: "About screen reddit label")
         static let privacy = NSLocalizedString("About.privacy", value:"Privacy Policy", comment: "Privay Policy button label")
-        static let footer = NSLocalizedString("About.footer", value:"Made by the HODL GRS community and Hash Engineering Solutions. Version %1$@", comment: "About screen footer")
+        static let footer = NSLocalizedString("About.footer", value:"Made by the HODL GRS community\nand\nHash Engineering Solutions.\nVersion %1$@", comment: "About screen footer")
     }
 
     enum PushNotifications {
@@ -312,7 +312,7 @@ enum S {
 
     enum DefaultCurrency {
         static let rateLabel = NSLocalizedString("DefaultCurrency.rateLabel", value:"Exchange Rate", comment: "Exchange rate label")
-        static let GroestlcoinLabel = NSLocalizedString("DefaultCurrency.GroestlcoinLabel", value: "Groestlcoin Display Unit", comment: "Groestlcoin denomination picker label")
+        static let bitcoinLabel = NSLocalizedString("DefaultCurrency.bitcoinLabel", value: "Groestlcoin Display Unit", comment: "Groestlcoin denomination picker label")
     }
 
     enum SyncingView {
