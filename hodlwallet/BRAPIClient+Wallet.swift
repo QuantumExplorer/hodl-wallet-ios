@@ -58,29 +58,66 @@ extension BRAPIClient {
         }
         task.resume()
     }
+    //The old exchangeRates method will be saved here for future reference
+    /*
+     func exchangeRates(isFallback: Bool = false, _ handler: @escaping (_ rates: [Rate], _ error: String?) -> Void) {
+         #if Testflight || Debug
+             let request = isFallback ? URLRequest(url: URL(string: fallbackRatesURL)!) : URLRequest(url: url("/hodl/rates.json"))
+
+         #else
+             let request = isFallback ? URLRequest(url: URL(string: fallbackRatesURL)!) : URLRequest(url: url("/hodl/rates.json"))
+
+         #endif
+
+         let task = dataTaskWithRequest(request) { (data, response, error) in
+             if error == nil, let data = data,
+                 let parsedData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                 if isFallback {
+                     guard let array = parsedData as? [Any] else {
+                         return handler([], "/rates didn't return an array")
+                     }
+                     handler(array.flatMap { Rate(data: $0) }, nil)
+                 } else {
+                     guard let array = parsedData as? [Any] else {
+                         return self.exchangeRates(isFallback: true, handler)
+                     }
+                     handler(array.flatMap { Rate(data: $0) }, nil)
+                 }
+             } else {
+                 if isFallback {
+                     handler([], "Error fetching from fallback url")
+                 } else {
+                     self.exchangeRates(isFallback: true, handler)
+                 }
+             }
+         }
+         task.resume()
+     }
+     */
     
     func exchangeRates(isFallback: Bool = false, _ handler: @escaping (_ rates: [Rate], _ error: String?) -> Void) {
-        #if Testflight || Debug
-            let request = isFallback ? URLRequest(url: URL(string: fallbackRatesURL)!) : URLRequest(url: url("/hodl/rates.json"))
-
-        #else
-            let request = isFallback ? URLRequest(url: URL(string: fallbackRatesURL)!) : URLRequest(url: url("/hodl/rates.json"))
-
-        #endif
+        
+        let request = isFallback ? URLRequest(url: URL(string: primaryRatesURL)!) : URLRequest(url: URL(string: primaryRatesURL)!)
 
         let task = dataTaskWithRequest(request) { (data, response, error) in
             if error == nil, let data = data,
                 let parsedData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
                 if isFallback {
-                    guard let array = parsedData as? [Any] else {
-                        return handler([], "/rates didn't return an array")
+                    if let results = parsedData as? [String: Any] {
+                        if let marketData = results["market_data"] as? [String: Any] {
+                            if let currencyData  = marketData["current_price"] as? [String: Any] {
+                                handler(currencyData.flatMap { CoinGeckoRate(data: $0)!.rateObject }, nil)
+                            }
+                        }
                     }
-                    handler(array.flatMap { Rate(data: $0) }, nil)
                 } else {
-                    guard let array = parsedData as? [Any] else {
-                        return self.exchangeRates(isFallback: true, handler)
+                    if let results = parsedData as? [String: Any] {
+                        if let marketData = results["market_data"] as? [String: Any] {
+                            if let currencyData  = marketData["current_price"] as? [String: Any] {
+                                handler(currencyData.flatMap { CoinGeckoRate(data: $0)!.rateObject }, nil)
+                            }
+                        }
                     }
-                    handler(array.flatMap { Rate(data: $0) }, nil)
                 }
             } else {
                 if isFallback {
