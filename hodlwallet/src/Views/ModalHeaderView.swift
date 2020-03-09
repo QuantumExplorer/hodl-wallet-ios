@@ -30,7 +30,7 @@ class ModalHeaderView : UIView {
 
         super.init(frame: .zero)
         setupSubviews()
-        addFaqButton()
+        //addFaqButton()
     }
 
     var faqInfo: (Store, String)? {

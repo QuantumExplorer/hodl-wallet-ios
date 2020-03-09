@@ -353,7 +353,7 @@ class ModalPresenter : Subscriber, Trackable {
                     start.navigationItem.title = S.Import.title
                     let faqButton = UIButton.buildFaqButton(store: myself.store, articleId: ArticleIds.importWallet)
                     faqButton.tintColor = .grayTextTint
-                    start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+                    //start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
                     importNav.viewControllers = [start]
                     settingsNav.dismiss(animated: true, completion: {
                         myself.topViewController?.present(importNav, animated: true, completion: nil)
@@ -376,7 +376,7 @@ class ModalPresenter : Subscriber, Trackable {
                     start.navigationItem.title = S.WipeWallet.title
                     let faqButton = UIButton.buildFaqButton(store: myself.store, articleId: ArticleIds.wipeWallet)
                     faqButton.tintColor = .grayTextTint
-                    start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+                    //start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
                     nc.viewControllers = [start]
                     settingsNav.dismiss(animated: true, completion: {
                         myself.topViewController?.present(nc, animated: true, completion: nil)
@@ -405,7 +405,7 @@ class ModalPresenter : Subscriber, Trackable {
 
                 let faqButton = UIButton.buildFaqButton(store: myself.store, articleId: ArticleIds.receiveBitcoin)
                 faqButton.tintColor = .grayTextTint
-                receiveViewController.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+                //receiveViewController.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
                 nc.viewControllers = [receiveViewController]
                 settingsNav.dismiss(animated: true, completion: {
                     myself.topViewController?.present(nc, animated: true, completion: nil)
@@ -614,7 +614,7 @@ class ModalPresenter : Subscriber, Trackable {
         start.navigationItem.title = S.SecurityCenter.Cells.paperKeyTitle
         let faqButton = UIButton.buildFaqButton(store: store, articleId: ArticleIds.paperKey)
         faqButton.tintColor = .grayTextTint
-        start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+        //start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
         paperPhraseNavigationController.viewControllers = [start]
         vc.present(paperPhraseNavigationController, animated: true, completion: nil)
     }

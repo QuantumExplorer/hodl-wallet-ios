@@ -70,7 +70,7 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
 
         let faqButton = UIButton.buildFaqButton(store: store, articleId: ArticleIds.displayCurrency)
         faqButton.tintColor = .grayTextTint
-        navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+        //navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
     }
 
     private func setExchangeRateLabel() {

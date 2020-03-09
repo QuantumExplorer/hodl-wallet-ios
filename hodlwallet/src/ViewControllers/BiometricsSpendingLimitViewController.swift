@@ -44,7 +44,7 @@ class BiometricsSpendingLimitViewController : UITableViewController, Subscriber 
 
         let faqButton = UIButton.buildFaqButton(store: store, articleId: ArticleIds.touchIdSpendingLimit)
         faqButton.tintColor = .grayTextTint
-        navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+        //navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
 
         body.text = S.TouchIdSpendingLimit.body
 
