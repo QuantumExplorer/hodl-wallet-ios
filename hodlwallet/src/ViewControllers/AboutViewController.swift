@@ -47,7 +47,7 @@ class AboutViewController : UIViewController {
             logoBackground.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
             logoBackground.heightAnchor.constraint(equalTo: logoBackground.widthAnchor, multiplier: 342.0/553.0) ])
         logo.constrain(toSuperviewEdges: nil)
-        /*blog.constrain([
+        blog.constrain([
             blog.topAnchor.constraint(equalTo: logoBackground.bottomAnchor, constant: C.padding[2]),
             blog.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             blog.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
@@ -58,10 +58,10 @@ class AboutViewController : UIViewController {
         reddit.constrain([
             reddit.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2]),
             reddit.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            reddit.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])*/
+            reddit.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
         privacy.constrain([
             privacy.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            privacy.topAnchor.constraint(equalTo: logoBackground.bottomAnchor, constant: C.padding[2])])
+            privacy.topAnchor.constraint(equalTo: reddit.bottomAnchor, constant: C.padding[2])])
         footer.constrain([
             footer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             footer.topAnchor.constraint(equalTo: privacy.bottomAnchor) ])
@@ -82,13 +82,13 @@ class AboutViewController : UIViewController {
 
     private func setActions() {
         blog.button.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://hodlwallet.com/")
+            myself.presentURL(string: "https://groestlcoin.org/")
         }
         twitter.button.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://twitter.com/hodlwallet")
+            myself.presentURL(string: "https://twitter.com/GroestlcoinTeam")
         }
         reddit.button.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://www.reddit.com/r/Hodlwallet/")
+            myself.presentURL(string: "https://www.reddit.com/r/Groestlcoin/")
         }
         privacy.tap = strongify(self) { myself in
             myself.presentURL(string: "https://github.com/Groestlcoin/hodl-wallet-ios/wiki/PrivacyPolicy")
