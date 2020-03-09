@@ -34,7 +34,7 @@ class StartViewController : UIViewController {
     }()
 
     private var logo: UIImageView = {
-        let image = UIImageView(image: #imageLiteral(resourceName: "LogoFront"))
+        let image = UIImageView(image: #imageLiteral(resourceName: "Logo"))
         image.contentMode = .scaleAspectFit
         return image
     }()

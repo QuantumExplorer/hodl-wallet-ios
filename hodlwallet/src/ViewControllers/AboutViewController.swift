@@ -12,7 +12,7 @@ import SafariServices
 class AboutViewController : UIViewController {
 
     private let titleLabel = UILabel(font: .customBold(size: 26.0), color: .whiteTint)
-    private let logo = UIImageView(image: #imageLiteral(resourceName: "LogoCutout"))
+    private let logo = UIImageView(image: #imageLiteral(resourceName: "Logo"))
     private let logoBackground = UIView()
     private let blog = AboutCell(text: S.About.blog)
     private let twitter = AboutCell(text: S.About.twitter)
@@ -28,6 +28,7 @@ class AboutViewController : UIViewController {
 
     private func addSubviews() {
         view.addSubview(titleLabel)
+        logo.contentMode = .scaleAspectFit
         view.addSubview(logoBackground)
         logoBackground.addSubview(logo)
         view.addSubview(blog)
