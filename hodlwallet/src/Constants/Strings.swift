@@ -74,7 +74,7 @@ enum S {
         static let invalidAddressMessage = NSLocalizedString("Send.invalidAddressMessage", value:"The destination address is not a valid Groestlcoin address.", comment: "Invalid address alert message")
         static let invalidAddressOnPasteboard = NSLocalizedString("Send.invalidAddressOnPasteboard", value: "Pasteboard does not contain a valid Groestlcoin address.", comment: "Invalid address on pasteboard message")
         static let emptyPasteboard = NSLocalizedString("Send.emptyPasteboard", value: "Pasteboard is empty", comment: "Empty pasteboard error message")
-        static let cameraUnavailableTitle = NSLocalizedString("Send.cameraUnavailableTitle", value:"Hodl is not allowed to access the camera", comment: "Camera not allowed alert title")
+        static let cameraUnavailableTitle = NSLocalizedString("Send.cameraUnavailableTitle", value:"Hodl GRS is not allowed to access the camera", comment: "Camera not allowed alert title")
         static let cameraUnavailableMessage = NSLocalizedString("Send.cameraunavailableMessage", value:"Go to Settings to allow camera access.", comment: "Camera not allowed message")
         static let feeLimitMessage = NSLocalizedString("Send.feeLimitMessage", value: "Fee is too high. Maximum fee is 1200 sat/byte.", comment: "Custom fee limit alert message")
         static let balance = NSLocalizedString("Send.balance", value:"Balance: %1$@", comment: "Balance: $4.00")
@@ -113,7 +113,7 @@ enum S {
     enum JailbreakWarnings {
         static let title = NSLocalizedString("JailbreakWarnings.title", value:"WARNING", comment: "Jailbreak warning title")
         static let messageWithBalance = NSLocalizedString("JailbreakWarnings.messageWithBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access Hodl's keychain data and steal your Groestlcoin! Wipe this wallet immediately and restore on a secure device.", comment: "Jailbreak warning message")
-        static let messageWithoutBalance = NSLocalizedString("JailbreakWarnings.messageWithoutBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access Hodl's keychain data and steal your Groestlcoin. Please only use Hodl on a non-jailbroken device.", comment: "Jailbreak warning message")
+        static let messageWithoutBalance = NSLocalizedString("JailbreakWarnings.messageWithoutBalance", value:"DEVICE SECURITY COMPROMISED\n Any 'jailbreak' app can access Hodl's keychain data and steal your Groestlcoin. Please only use Hodl GRS on a non-jailbroken device.", comment: "Jailbreak warning message")
         static let ignore = NSLocalizedString("JailbreakWarnings.ignore", value:"Ignore", comment: "Ignore jailbreak warning button")
         static let wipe = NSLocalizedString("JailbreakWarnings.wipe", value:"Wipe", comment: "Wipe wallet button")
         static let close = NSLocalizedString("JailbreakWarnings.close", value:"Close", comment: "Close app button")
@@ -304,7 +304,7 @@ enum S {
 
     enum PushNotifications {
         static let title = NSLocalizedString("PushNotifications.title", value:"Notifications", comment: "Push notifications settings view title label")
-        static let body = NSLocalizedString("PushNotifications.body", value:"Turn on notifications to receive special messages from Hodl in the future.", comment: "Push notifications settings view body")
+        static let body = NSLocalizedString("PushNotifications.body", value:"Turn on notifications to receive special messages from Hodl GRS in the future.", comment: "Push notifications settings view body")
         static let label = NSLocalizedString("PushNotifications.label", value:"Push Notifications", comment: "Push notifications toggle switch label")
         static let on = NSLocalizedString("PushNotifications.on", value: "On", comment: "Push notifications are on label")
         static let off = NSLocalizedString("PushNotifications.off", value: "Off", comment: "Push notifications are off label")
@@ -336,7 +336,7 @@ enum S {
 
     enum ShareData {
         static let header = NSLocalizedString("ShareData.header", value:"Share Data?", comment: "Share data header")
-        static let body = NSLocalizedString("ShareData.body", value:"Help improve Hodl by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.", comment: "Share data view body")
+        static let body = NSLocalizedString("ShareData.body", value:"Help improve Hodl GRS by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.", comment: "Share data view body")
         static let toggleLabel = NSLocalizedString("ShareData.toggleLabel", value:"Share Anonymous Data?", comment: "Share data switch label.")
     }
 
@@ -405,7 +405,7 @@ enum S {
     }
 
     enum Watch {
-        static let noWalletWarning = NSLocalizedString("Watch.noWalletWarning", value: "Open the Hodl iPhone app to set up your wallet.", comment: "'No wallet' warning for watch app")
+        static let noWalletWarning = NSLocalizedString("Watch.noWalletWarning", value: "Open the Hodl GRS iPhone app to set up your wallet.", comment: "'No wallet' warning for watch app")
     }
 
     enum Search {
@@ -426,7 +426,7 @@ enum S {
         }
         enum UpgradePin {
             static let title = NSLocalizedString("Prompts.UpgradePin.title", value: "Upgrade PIN", comment: "Upgrade PIN prompt title.")
-            static let body = NSLocalizedString("Prompts.UpgradePin.body", value: "Hodl has upgraded to using a 6-digit PIN. Tap here to upgrade.", comment: "Upgrade PIN prompt body.")
+            static let body = NSLocalizedString("Prompts.UpgradePin.body", value: "Hodl GRS has upgraded to using a 6-digit PIN. Tap here to upgrade.", comment: "Upgrade PIN prompt body.")
         }
         enum RecommendRescan {
             static let title = NSLocalizedString("Prompts.RecommendRescan.title", value: "Transaction Rejected", comment: "Transaction rejected prompt title")
@@ -438,7 +438,7 @@ enum S {
         }
         enum ShareData {
             static let title = NSLocalizedString("Prompts.ShareData.title", value: "Share Anonymous Data", comment: "Share data prompt title")
-            static let body = NSLocalizedString("Prompts.ShareData.body", value: "Help improve Hodl by sharing your anonymous data with us", comment: "Share data prompt body")
+            static let body = NSLocalizedString("Prompts.ShareData.body", value: "Help improve Hodl GRS by sharing your anonymous data with us", comment: "Share data prompt body")
         }
         enum FaceId {
             static let title = NSLocalizedString("Prompts.FaceId.title", value: "Enable Face ID", comment: "Enable face ID prompt title")
@@ -479,7 +479,7 @@ enum S {
 
     enum LocationPlugin {
         static let disabled = NSLocalizedString("LocationPlugin.disabled", value: "Location services are disabled.", comment: "Location services disabled error")
-        static let notAuthorized = NSLocalizedString("LocationPlugin.notAuthorized", value: "Hodl does not have permission to access location services.", comment: "No permissions for location services")
+        static let notAuthorized = NSLocalizedString("LocationPlugin.notAuthorized", value: "Hodl GRS does not have permission to access location services.", comment: "No permissions for location services")
     }
 
     enum Webview {
@@ -498,8 +498,8 @@ enum S {
 
     enum Import {
         static let leftCaption = NSLocalizedString("Import.leftCaption", value: "Private key to be swept", comment: "Caption for graphics")
-        static let rightCaption = NSLocalizedString("Import.rightCaption", value: "Your Hodl Wallet", comment: "Caption for graphics")
-        static let importMessage = NSLocalizedString("Import.message", value: "Sweeping a private key transfers all the Groestlcoin from your private key into your Hodl wallet using a single transaction.", comment: "Sweep private key intro screen message")
+        static let rightCaption = NSLocalizedString("Import.rightCaption", value: "Your Hodl GRS Wallet", comment: "Caption for graphics")
+        static let importMessage = NSLocalizedString("Import.message", value: "Sweeping a private key transfers all the Groestlcoin from your private key into your Hodl GRS wallet using a single transaction.", comment: "Sweep private key intro screen message")
         static let importWarning = NSLocalizedString("Import.warning", value: "Sweeping a private key does not include transaction history or other details.", comment: "Sweep private key intro warning message")
         static let scan = NSLocalizedString("Import.scan", value: "Scan Private Key", comment: "Scan Private key button label")
         static let title = NSLocalizedString("Import.title", value: "Sweep Private Key", comment: "Sweep Private Key screen title")
@@ -542,7 +542,7 @@ enum S {
         static let failedTitle = NSLocalizedString("WipeWallet.failedTitle", value: "Failed", comment: "Failed wipe wallet alert title")
         static let failedMessage = NSLocalizedString("WipeWallet.failedMessage", value: "Failed to wipe wallet.", comment: "Failed wipe wallet alert message")
         static let instruction = NSLocalizedString("WipeWallet.instruction", value: "To start a new wallet or restore an existing wallet, you must first erase the wallet that is currently installed. To continue, enter the current wallet's Backup Recovery Key.", comment: "Enter key to wipe wallet instruction.")
-        static let startMessage = NSLocalizedString("WipeWallet.startMessage", value: "Starting or recovering another wallet allows you to access and manage a different Hodl wallet on this device.", comment: "Start wipe wallet view message")
+        static let startMessage = NSLocalizedString("WipeWallet.startMessage", value: "Starting or recovering another wallet allows you to access and manage a different Hodl GRS wallet on this device.", comment: "Start wipe wallet view message")
         static let startWarning = NSLocalizedString("WipeWallet.startWarning", value: "Your current wallet will be removed from this device. If you wish to restore it in the future, you will need to enter your Backup Recovery Key.", comment: "Start wipe wallet view warning")
     }
 
