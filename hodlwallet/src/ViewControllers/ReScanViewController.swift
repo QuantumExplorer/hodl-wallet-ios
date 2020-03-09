@@ -50,6 +50,7 @@ class ReScanViewController : UIViewController, Subscriber {
             faq.centerYAnchor.constraint(equalTo: header.centerYAnchor),
             faq.widthAnchor.constraint(equalToConstant: 44.0),
             faq.heightAnchor.constraint(equalToConstant: 44.0) ])
+        faq.isHidden = true
         body.constrain([
             body.leadingAnchor.constraint(equalTo: header.leadingAnchor),
             body.topAnchor.constraint(equalTo: header.bottomAnchor, constant: C.padding[2]),

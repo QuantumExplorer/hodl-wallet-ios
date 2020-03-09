@@ -93,6 +93,7 @@ class StartViewController : UIViewController {
             faq.widthAnchor.constraint(equalToConstant: 44.0),
             faq.heightAnchor.constraint(equalToConstant: 44.0) ])
         message.isHidden = true
+        faq.isHidden = true
     }
 
     private func addButtonActions() {

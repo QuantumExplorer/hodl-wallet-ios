@@ -123,6 +123,7 @@ class UpdatePinViewController : UIViewController, Subscriber {
             faq.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -C.padding[2]),
             faq.constraint(.height, constant: 44.0),
             faq.constraint(.width, constant: 44.0)])
+        faq.isHidden = true
         caption.constrain([
             caption.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: C.padding[2]),
             caption.bottomAnchor.constraint(equalTo: pinPad.view.topAnchor, constant: -C.padding[2]),

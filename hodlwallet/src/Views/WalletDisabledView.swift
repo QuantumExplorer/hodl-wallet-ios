@@ -72,6 +72,7 @@ class WalletDisabledView : UIView {
             faq.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -C.padding[2]),
             faq.widthAnchor.constraint(equalToConstant: 44.0),
             faq.heightAnchor.constraint(equalToConstant: 44.0)])
+        faq.isHidden = true
         reset.constrain([
             reset.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -C.padding[2]),
             reset.centerYAnchor.constraint(equalTo: faq.centerYAnchor),

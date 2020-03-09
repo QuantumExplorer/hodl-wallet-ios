@@ -81,6 +81,7 @@ class ModalHeaderView : UIView {
             faq.constraint(.height, constant: buttonSize),
             faq.constraint(.width, constant: buttonSize) ])
         faq.tintColor = .grayTextTint
+        faq.isHidden = true
     }
 
     private func setColors() {
