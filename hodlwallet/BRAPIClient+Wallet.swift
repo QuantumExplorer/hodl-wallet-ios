@@ -9,6 +9,7 @@
 import Foundation
 
 private let fallbackRatesURL = "https://bitpay.com/api/rates"
+private let primaryRatesURL = "https://api.coingecko.com/api/v3/coins/groestlcoin?localization=false&community_data=false&developer_data=false&sparkline=false"
 
 extension BRAPIClient {
     func feePerKb(_ handler: @escaping (_ fees: Fees, _ error: String?) -> Void) {
@@ -129,6 +130,26 @@ extension BRAPIClient {
         }
         task.resume()
     }
+    
+    /*func exchangeRatesGRS(isFallback: Bool = false, _ handler: @escaping (_ rate: Double, _ error: String?) -> Void) {
+
+        let request = URLRequest(url: URL(string: "https://api.coingecko.com/api/v3/simple/price?ids=groestlcoin&vs_currencies=BTC")!)
+        // {"groestlcoin":{"btc":2.371e-05}}
+
+        let task = dataTaskWithRequest(request) { (data, response, error) in
+            if error == nil, let data = data,
+                let parsedData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any] {
+                
+                guard let grs = parsedData["groestlcoin"] as? JSONObject, let rate = grs["btc"] as? Double else {
+                    handler(0.00, "Error fetching from fallback url")
+                }
+                handler(rate, nil)
+            } else {
+                handler(0.00, "Error fetching from fallback url")
+            }
+        }
+        task.resume()
+    }*/
     
     func savePushNotificationToken(_ token: Data) {
         var req = URLRequest(url: url("/me/push-devices"))
