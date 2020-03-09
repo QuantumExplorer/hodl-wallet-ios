@@ -460,10 +460,10 @@ class ModalPresenter : Subscriber, Trackable {
                                 let nodeSelector = NodeSelectorViewController(walletManager: walletManager)
                                 settingsNav.pushViewController(nodeSelector, animated: true)
                             }),
-                            Setting(title: S.BCH.title, callback: {
+                            /*Setting(title: S.BCH.title, callback: {
                                 let bCash = BCashTransactionViewController(walletManager: walletManager, store: myself.store)
                                 settingsNav.pushViewController(bCash, animated: true)
-                            })
+                            })*/
                         ]
                     ]
 
