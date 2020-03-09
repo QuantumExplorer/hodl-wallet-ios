@@ -9,13 +9,13 @@
 import UIKit
 import BRCore
 
-private let utxoApiURL = "https://blockstream.info/api/address/%@/utxo"
-private let utxoApiFalbackURL = "https://blockstream.info/api/address/%@/utxo"
-private let utxoApiTestnetURL = "https://blockstream.info/testnet/api/address/%@/utxo"
+private let utxoApiURL = "https://chainz.cryptoid.info/grs/api.dws?q=unspent&key=d47da926b82e&active=%@"
+private let utxoApiFalbackURL = "https://blockbook.groestlcoin.org/api/v2/utxo/%@"
+private let utxoApiTestnetURL = "https://blockbook-test.groestlcoin.org/api/v2/utxo/%@"
 
-private let txApiURL = "https://blockstream.info/api/tx/%@"
-private let txApiFalbackURL = "https://blockstream.info/api/tx/%@"
-private let txApiTestnetURL = "https://blockstream.info/testnet/api/tx/%@"
+private let txApiURL = "https://chainz.cryptoid.info/grs-test/api.dws?q=txinfo&key=d47da926b82e&t=%@"
+private let txApiFalbackURL = "https://blockbook.groestlcoin.org/api/v2/tx/%@"
+private let txApiTestnetURL = "https://blockbook-test.groestlcoin.org/api/v2/tx/%@"
 
 class StartImportViewController : UIViewController {
 
