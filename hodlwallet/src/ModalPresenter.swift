@@ -473,7 +473,7 @@ class ModalPresenter : Subscriber, Trackable {
             ]
         ]
 
-        rows["Bread"]?.append( Setting(title: S.Settings.review, callback: {
+        /*rows["Bread"]?.append( Setting(title: S.Settings.review, callback: {
                 let alert = UIAlertController(title: S.Settings.review, message: S.Settings.enjoying, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: S.Button.no, style: .default, handler: { _ in
                     self.messagePresenter.presenter = self.topViewController
@@ -486,7 +486,7 @@ class ModalPresenter : Subscriber, Trackable {
                 }))
                 self.topViewController?.present(alert, animated: true, completion: nil)
             })
-        )
+        )*/
 
         let settings = SettingsViewController(sections: sections, rows: rows)
         settings.addCloseNavigationItem(tintColor: .gradientStart)
