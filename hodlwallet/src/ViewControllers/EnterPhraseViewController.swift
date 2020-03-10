@@ -115,6 +115,7 @@ class EnterPhraseViewController : UIViewController, UIScrollViewDelegate, Custom
             faq.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             faq.widthAnchor.constraint(equalToConstant: 44.0),
             faq.heightAnchor.constraint(equalToConstant: 44.0) ])
+        faq.isHidden = true
         moreInfoButton.constrain([
             moreInfoButton.topAnchor.constraint(equalTo: subheader.bottomAnchor, constant: C.padding[2]),
             moreInfoButton.leadingAnchor.constraint(equalTo: subheader.leadingAnchor) ])
