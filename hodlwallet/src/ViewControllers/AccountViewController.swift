@@ -337,7 +337,7 @@ class AccountViewController : UIViewController, Subscriber {
     }
     
     private func attemptShowSegwitView() {
-        if !UserDefaults.hasShownSegwit {
+        /*if !UserDefaults.hasShownSegwit {
             let welcomeToSegwitMessage = SegwitViewController()
             welcomeToSegwitMessage.transitioningDelegate = segwitTransitingDelegate
             welcomeToSegwitMessage.modalPresentationStyle = .overFullScreen
@@ -345,7 +345,7 @@ class AccountViewController : UIViewController, Subscriber {
             segwitTransitingDelegate.shouldShowMaskView = false
             loginView.present(welcomeToSegwitMessage, animated: true, completion: nil)
             UserDefaults.hasShownSegwit = true
-        }
+        }*/
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
