@@ -164,7 +164,7 @@ class StartImportViewController : UIViewController {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         present(balanceActivity, animated: true, completion: {
-            for (_, address) in [bech32Address, legacyAddress].enumerated() {
+            for (_, address) in [legacyAddress].enumerated() {
                 dispatchGroup.enter()
                 
                 let utxoUrlString = String(format: (E.isTestnet ? utxoApiTestnetURL : utxoApiURL), address)
@@ -174,26 +174,29 @@ class StartImportViewController : UIViewController {
                 utxoRequest.httpMethod = "GET"
                 let utxoTask = (URLSession.shared.dataTask(with: utxoRequest as URLRequest) { data, response, error in
                     guard error == nil else { print("error: \(error!)"); return }
-                    
                     guard let data       = data,
                         let jsonData     = try? JSONSerialization.jsonObject(with: data, options: []),
+                        //I think the following needs to be changed as it might not return an NSArray
                         let jsonRootArray = jsonData as? NSArray else {
-                            self.handleData(outputs: utxos, key: key)
-                            
+                            DispatchQueue.main.async {
+                                self.handleData(outputs: utxos, key: key)
+                            }
                             return
                         }
                     
                     for (_, txData) in jsonRootArray.enumerated() {
                         guard let tx   = txData as? NSDictionary,
-                            let txid   = tx.value(forKey: "txid") as? String,
-                            let vout   = tx.value(forKey: "vout") as? Int,
-                            let status = tx.value(forKey: "status") as? NSDictionary,
+                            let txid   = tx.value(forKey: "tx_hash") as? String,
+                            let vout   = tx.value(forKey: "tx_ouput_n") as? Int,
+                            let confirmations = tx.value(forKey: "confirmations") as? Int,
+                            let script = tx.value(forKey: "script") as? String,
                             let value  = tx.value(forKey: "value") as? UInt64 else {
-                                self.handleData(outputs: utxos, key: key)
-                                
+                                DispatchQueue.main.async {
+                                    self.handleData(outputs: utxos, key: key)
+                                }
                                 return
                             }
-                        
+                        //the following needs to be rewritten (and the extra call to the server might not be necessary), I added script and removed status, but didn't really go deep into things.
                         // Check the status is confirmed only add confirmed transactions
                         if (status.value(forKey: "confirmed") as! Bool) {
                             dispatchGroup.enter()
@@ -211,8 +214,9 @@ class StartImportViewController : UIViewController {
                                     let jsonData     = try? JSONSerialization.jsonObject(with: data, options: []),
                                     let jsonRootDict = jsonData as? NSDictionary,
                                     let vouts        = jsonRootDict.value(forKey: "vout") as? NSArray else {
-                                        self.handleData(outputs: utxos, key: key)
-                                        
+                                        DispatchQueue.main.async {
+                                            self.handleData(outputs: utxos, key: key)
+                                        }
                                         return
                                     }
                                 
@@ -220,14 +224,18 @@ class StartImportViewController : UIViewController {
                                 if (vouts.count >= (vout + 1)) {
                                     guard let voutItem   = vouts[vout] as? NSDictionary,
                                         let scriptPubKey = voutItem.value(forKey: "scriptpubkey") as? String else {
-                                        self.handleData(outputs: utxos, key: key)
+                                            DispatchQueue.main.async {
+                                                self.handleData(outputs: utxos, key: key)
+                                            }
                                         
                                         return
                                     }
                                     
                                     guard let hashData = txid.hexToData,
                                         let scriptData = scriptPubKey.hexToData else {
-                                            self.handleData(outputs: utxos, key: key)
+                                            DispatchQueue.main.async {
+                                                self.handleData(outputs: utxos, key: key)
+                                            }
                                             
                                             return
                                     }

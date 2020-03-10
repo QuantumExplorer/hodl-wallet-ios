@@ -39,6 +39,7 @@ class ScanViewController : UIViewController, Trackable {
     private let close = UIButton.close
     private let flash = UIButton.icon(image: #imageLiteral(resourceName: "Flash"), accessibilityLabel: S.Scanner.flashButtonLabel)
     fileprivate var currentUri = ""
+    private var lastScannedAddress = "";
 
     init(completion: @escaping ScanCompletion, isValidURI: @escaping (String) -> Bool) {
         self.completion = completion
@@ -196,11 +197,16 @@ extension ScanViewController : AVCaptureMetadataOutputObjectsDelegate {
         if isValidURI(address) {
             saveEvent("scan.privateKey")
             guide.state = .positive
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                self.dismiss(animated: true, completion: {
-                    self.scanKeyCompletion?(address)
+            if (!(self.lastScannedAddress == address)) {
+                self.lastScannedAddress = address
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    if (!self.isBeingDismissed) {
+                        self.dismiss(animated: true, completion: {
+                            self.scanKeyCompletion?(address)
+                        })
+                    }
                 })
-            })
+            }
         } else {
             guide.state = .negative
         }
